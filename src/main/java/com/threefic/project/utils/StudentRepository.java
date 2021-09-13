@@ -14,7 +14,7 @@ public interface StudentRepository extends CrudRepository<Student, Integer> {
 
 	List<Student> findByLastname(String lastname);
 	
-	Student findByStudentId(long id);
+	Student findByStudentId(Integer id);
 	
 	@Query("SELECT c FROM Course c JOIN c.students sc WHERE sc.studentId = :id")
 	Set<Course> findCoursesByStudentId(@Param("id")Integer studentId);
